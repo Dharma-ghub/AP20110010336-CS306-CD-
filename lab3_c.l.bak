@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+int count=0; /*Global variables*/
+%}
+
+/*Rule Section*/
+%%
+/*Increase the count whenever encounter newline.*/
+\n count++;				
+
+%%
+int yywrap()
+{return 1;}
+/*Auxiliary function*/
+/*Driver function*/
+int main(void)
+{
+/*Read the input file q1.txt*/
+yyin=fopen("q1.txt","r");								
+/*call the yylex function.*/
+yylex();	
+/*print the number of lines.*/
+printf("Number of lines are:: %d\n",count);				
+
+}
+
+/*call the yywrap function*/

@@ -1,0 +1,3 @@
+int a,b,c,d;
+a=10;
+geeks for geeks
